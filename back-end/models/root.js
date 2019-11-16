@@ -1,4 +1,5 @@
 const dataS = require('../services/data-service');
+const ocrS = require('../services/ocr-service');
 const { head } = require('ramda');
 const { shuffle } = require('../helpers/util');
 
@@ -25,6 +26,11 @@ module.exports = () => {
 		async getQuizData({ lang, typeid }) {
 			const s = await dataS.getQuizData({ lang, typeid });
 			return shuffle(s.map(normalizeItem));
+		},
+		async getCharacter({ image }) {
+			console.log(image)
+			await ocrS.getCharacter(image)
+			return "H"
 		},
 		getTypeOfItem: dataS.getTypeOfItem,
 		getAllTypes: dataS.getAllTypes,

@@ -3,6 +3,7 @@ module.exports = {
 		getListData,
 		getQuizData,
 		getAllTypes,
+		getCharacter,
 	},
 	Item: {
 		type: getTypeOfItem,
@@ -23,4 +24,8 @@ async function getQuizData(_, params, ctx) {
 
 async function getAllTypes(_, __, ctx) {
 	return ctx.models.root.getAllTypes();
+}
+
+async function getCharacter(_, params, ctx) {
+	return ctx.models.root.getCharacter(params);
 }
