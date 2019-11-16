@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -348,14 +348,14 @@ const Test = props => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!***********************************!*\
   !*** multi ./pages/home/index.js ***!
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/admin/hackathon-project/dyslexic-learn/front-end/pages/home/index.js */"./pages/home/index.js");
+module.exports = __webpack_require__(/*! /home/ubuntu/dyslexic-learn/front-end/pages/home/index.js */"./pages/home/index.js");
 
 
 /***/ }),

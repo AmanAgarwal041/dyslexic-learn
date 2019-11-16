@@ -1,1 +1,0 @@
-{"ast":null,"code":"export default (function () {});","map":{"version":3,"sources":["/Users/admin/hackathon-project/dyslexic-learn/front-end/helpers/noop.js"],"names":[],"mappings":"AAAA,gBAAe,YAAM,CAAE,CAAvB","sourcesContent":["export default () => {};"]},"metadata":{},"sourceType":"module"}

@@ -2160,10 +2160,10 @@ exports.LazyPoint = _LazyPoint2.default;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fhome&absolutePagePath=%2FUsers%2Fadmin%2Fhackathon-project%2Fdyslexic-learn%2Ffront-end%2Fpages%2Fhome%2Findex.js!./":
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fhome&absolutePagePath=%2FUsers%2Fadmin%2Fhackathon-project%2Fdyslexic-learn%2Ffront-end%2Fpages%2Fhome%2Findex.js ***!
-  \************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fhome&absolutePagePath=%2Fhome%2Fubuntu%2Fdyslexic-learn%2Ffront-end%2Fpages%2Fhome%2Findex.js!./":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fhome&absolutePagePath=%2Fhome%2Fubuntu%2Fdyslexic-learn%2Ffront-end%2Fpages%2Fhome%2Findex.js ***!
+  \****************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5037,14 +5037,14 @@ var Test = function Test(props) {
 
 /***/ }),
 
-/***/ 3:
-/*!****************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fhome&absolutePagePath=%2FUsers%2Fadmin%2Fhackathon-project%2Fdyslexic-learn%2Ffront-end%2Fpages%2Fhome%2Findex.js ***!
-  \****************************************************************************************************************************************************************/
+/***/ 2:
+/*!********************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fhome&absolutePagePath=%2Fhome%2Fubuntu%2Fdyslexic-learn%2Ffront-end%2Fpages%2Fhome%2Findex.js ***!
+  \********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fhome&absolutePagePath=%2FUsers%2Fadmin%2Fhackathon-project%2Fdyslexic-learn%2Ffront-end%2Fpages%2Fhome%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fhome&absolutePagePath=%2FUsers%2Fadmin%2Fhackathon-project%2Fdyslexic-learn%2Ffront-end%2Fpages%2Fhome%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fhome&absolutePagePath=%2Fhome%2Fubuntu%2Fdyslexic-learn%2Ffront-end%2Fpages%2Fhome%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fhome&absolutePagePath=%2Fhome%2Fubuntu%2Fdyslexic-learn%2Ffront-end%2Fpages%2Fhome%2Findex.js!./");
 
 
 /***/ }),
@@ -5060,5 +5060,5 @@ module.exports = dll_7aff549c98b978433226;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=home.js.map
