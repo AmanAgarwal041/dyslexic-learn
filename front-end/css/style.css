@@ -1,0 +1,138 @@
+.menu-icon {
+	width: 46px;
+}
+.loader i {
+	width: 15px;
+	height: 15px;
+	background: rgb(84, 170, 117);
+	display: inline-block;
+	border-radius: 100%;
+}
+.loader i:nth-child(1) {
+	-webkit-animation: loading 2s linear infinite;
+	animation: loading 2s linear infinite;
+	margin-right: 20px;
+}
+.loader i:nth-child(2) {
+	-webkit-animation: loading 2s linear infinite;
+	animation: loading 2s linear infinite;
+	animation-delay: 0.3s;
+	margin-right: 20px;
+}
+.loader i:nth-child(3) {
+	-webkit-animation: loading 2s linear infinite;
+	animation: loading 2s linear infinite;
+	animation-delay: 0.5s;
+}
+@keyframes loading {
+	0% {
+		opacity: 1;
+		transform: scale(1.2);
+	}
+	50% {
+		opacity: 0.5;
+		transform: scale(0.7);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1.2);
+	}
+}
+.sidebar.sidebar--closed .parent-item:hover .menu-label, .sidebar.sidebar--closed  .menu-label:hover{
+	visibility: visible;
+	opacity: 1;
+	min-width: 150px;
+}
+
+.input-err {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97);
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/* utilities*/
+.left-100 {
+	left: 100%;
+}
+.w-15 {
+	width: 15%;
+}
+.visibility-hidden {
+	visibility: hidden;
+}
+.svg-s-silver {
+	stroke: #999;
+}
+
+.svg-s-white {
+	stroke: #fff;
+}
+
+.filter-gray {
+	filter: grayscale(1);
+}
+
+.svg-fn {
+	fill: none;
+}
+.overflow-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.sticky {
+	position: sticky;
+}
+
+.w1-5 {
+	width: 1.5rem;
+}
+.h1-5 {
+	height: 1.5rem;
+}
+
+.w2-5 {
+	width: 3rem;
+}
+.h2-5 {
+	height: 3rem;
+}
+/* utilities*/
+.inner-items-dn__multi-value {
+	display: none !important;
+}
+
+/* React-Date-Picker */
+.custom-date-picker .react-date-picker__wrapper {
+	border: 1px solid #d7d7d7;
+}
+
+.custom-date-picker input {
+	color: #999;
+}
+
+.custom-date-picker .react-date-picker__calendar-button {
+	border-left: 1px solid #d7d7d7;
+	outline: none
+}
+
+.custom-date-picker .react-date-picker__calendar-button svg, .custom-date-picker .react-date-picker__clear-button svg{
+	stroke: #999;
+}
