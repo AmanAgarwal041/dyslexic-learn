@@ -4,11 +4,13 @@ const config = require('../config');
 module.exports.getCharacter = getCharacter
 
 function getCharacter(imageString) {
-    let subscriptionKey = config.COMPUTER_VISION_SUBSCRIPTION_KEY;
-    let endpoint = config.COMPUTER_VISION_ENDPOINT
-    if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
+    // let subscriptionKey = config.COMPUTER_VISION_SUBSCRIPTION_KEY;
+    // let endpoint = config.COMPUTER_VISION_ENDPOINT
+    let key = config.OCR_KEY
+
+    // if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
     
-    var uriBase = endpoint + 'vision/v2.1/ocr';
+    // var uriBase = endpoint + 'vision/v2.1/ocr';
    
     var base64Data = imageString.replace(/^data:image\/png;base64,/, "");
     var time = Date.now();
@@ -25,12 +27,12 @@ function getCharacter(imageString) {
     };
     
     const options = {
-        uri: uriBase,
-        qs: params,
-        body: '{"url": ' + '"' + imageUrl + '"}',
+        uri: "https://api.ocr.space/parse/imageurl?apikey="+key+"&url="+imageUrl,
+        // qs: params,
+        // body: '{"url": ' + '"' + imageUrl + '"}',
         headers: {
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key' : subscriptionKey
+            // 'Ocp-Apim-Subscription-Key' : subscriptionKey
         }
     };
     
