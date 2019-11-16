@@ -5,6 +5,7 @@ module.exports = {
 	getListData,
 	getQuizData,
 	getTypeOfItem,
+	getAllTypes,
 };
 
 async function getListData({ offset = 0, lang = 'en', typeid, limit = 1 }) {
@@ -25,4 +26,8 @@ async function getTypeOfItem(typeid) {
 	const t = await pg('itemtypes')
 		.where({ id: typeid });
 	return head(t);
+}
+
+async function getAllTypes() {
+	return pg('itemtypes');
 }

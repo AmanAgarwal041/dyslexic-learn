@@ -3,6 +3,10 @@ const { head } = require('ramda');
 const { shuffle } = require('../helpers/util');
 
 const normalizeItem = obj => {
+	if (!obj) {
+		return obj;
+	}
+
 	return {
 		...obj,
 		images: JSON.parse(obj.images || "[]"),
@@ -23,5 +27,6 @@ module.exports = () => {
 			return shuffle(s.map(normalizeItem));
 		},
 		getTypeOfItem: dataS.getTypeOfItem,
+		getAllTypes: dataS.getAllTypes,
 	};
 };

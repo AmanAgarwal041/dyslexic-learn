@@ -2,6 +2,7 @@ module.exports = {
 	RootQuery: {
 		getListData,
 		getQuizData,
+		getAllTypes,
 	},
 	Item: {
 		type: getTypeOfItem,
@@ -18,4 +19,8 @@ async function getTypeOfItem(rootVal, _, ctx) {
 
 async function getQuizData(_, params, ctx) {
 	return ctx.models.root.getQuizData(params);
+}
+
+async function getAllTypes(_, __, ctx) {
+	return ctx.models.root.getAllTypes();
 }

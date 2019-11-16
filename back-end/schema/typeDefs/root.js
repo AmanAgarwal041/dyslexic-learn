@@ -28,5 +28,6 @@ module.exports = gql`
 			typeid: ID!,
 			lang: String = "en"
 		): [Item!]!
+		getAllTypes: [ItemType!]
 	}
 `;
