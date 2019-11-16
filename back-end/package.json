@@ -1,0 +1,19 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.9.9",
+    "express": "^4.17.1",
+    "knex": "^0.20.2",
+    "pg": "^7.12.1",
+    "ramda": "^0.26.1"
+  }
+}
