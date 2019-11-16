@@ -13,10 +13,10 @@ function getCharacter(imageString) {
     var base64Data = imageString.replace(/^data:image\/png;base64,/, "");
     var time = Date.now();
 
-    require("fs").writeFile(time+".png", base64Data, 'base64', function(err) {
+    require("fs").writeFile("/home/ubuntu/images/"+time+".png", base64Data, 'base64', function(err) {
         console.log(err);
     });
-    const imageUrl = '168.61.181.153:4000/'+time+'.png';
+    const imageUrl = 'http://168.61.181.153/'+time+'.png';
 
     // Request parameters.
     const params = {
