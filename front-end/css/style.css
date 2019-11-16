@@ -24,6 +24,16 @@
 	animation: loading 2s linear infinite;
 	animation-delay: 0.5s;
 }
+
+.br--right3 {
+	border-top-left-radius: 3rem;
+	border-bottom-left-radius: 3rem;
+}
+.br--left3 {
+	border-top-right-radius: 3rem;
+	border-bottom-right-radius: 3rem;
+}
+
 @keyframes loading {
 	0% {
 		opacity: 1;
@@ -119,20 +129,35 @@
 	display: none !important;
 }
 
-/* React-Date-Picker */
-.custom-date-picker .react-date-picker__wrapper {
-	border: 1px solid #d7d7d7;
+.bg-prpl {
+	background: #683ba3;
 }
 
-.custom-date-picker input {
-	color: #999;
+.b--prpl {
+	border-color: #683ba3;
 }
 
-.custom-date-picker .react-date-picker__calendar-button {
-	border-left: 1px solid #d7d7d7;
-	outline: none
+.prpl {
+	color: #683ba3;
 }
 
-.custom-date-picker .react-date-picker__calendar-button svg, .custom-date-picker .react-date-picker__clear-button svg{
-	stroke: #999;
+.ylw {
+	color: #fff238;
+}
+.bg-ylw {
+	background: #fff238;
+}
+.b--ylw {
+	border-color: #fff238;
+}
+.f-18{
+	font-size:18rem;
+}
+
+.bg-pnk {
+	background: #f75897;
+}
+
+.bg-grn {
+	background: #63d6c5;
 }

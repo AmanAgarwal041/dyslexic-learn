@@ -23,7 +23,7 @@ class MercuryDocument extends Document {
 						}
 					`}}/>
 				</Head>
-				<body>
+				<body className="bg-grn">
 					<Main />
 					<NextScript />
 					<div id="toast-container"/>

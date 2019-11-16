@@ -1,9 +1,3 @@
-import React from 'react';
+import Index from './home';
 
-const Home = props => (
-	<div className="flex flex-grow-1">
-		Hello
-	</div>
-);
-
-export default Home;
+export default Index;

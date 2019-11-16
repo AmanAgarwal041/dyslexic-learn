@@ -1,5 +1,5 @@
 const routes = require('next-routes')();
  
-routes.add('/nxt/filterQuestion', 'filter-question');
+routes.add('/', '/home');
 
 module.exports = routes;
