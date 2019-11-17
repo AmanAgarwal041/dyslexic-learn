@@ -16,5 +16,5 @@ async function getCharacter(imageString) {
     
     const [result] = await client.textDetection("/home/ubuntu/images/"+time+".png");
     const detections = result.textAnnotations;
-    return detections[0].text;   
+    return detections[0].description.replace(/(\r|\t|\r\t|\n|\s)/g, '');   
 }
