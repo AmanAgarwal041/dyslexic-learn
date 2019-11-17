@@ -6569,7 +6569,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "/home/ubuntu/dyslexic-learn/front-end/.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/admin/hackathon-project/dyslexic-learn/front-end/.next");
       return error;
     }
   };

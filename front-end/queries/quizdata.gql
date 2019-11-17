@@ -1,0 +1,10 @@
+query quizdata($typeid:ID!,$lang:String){
+  getQuizData(typeid:$typeid,lang:$lang){
+    id
+    name
+    images
+    lang
+   
+  }
+}
+
