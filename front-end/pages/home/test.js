@@ -6,33 +6,38 @@ import getchar from '../../queries/getchar.gql';
 import quizdata from '../../queries/quizdata.gql';
 import PropTypes from 'prop-types';
 import CanvasDraw from "react-canvas-draw";
+import Timer from '../../components/timer';
 
 
-const Timer=()=>{
-	const [time,setTime]=useState(15)
-
-		const interval=setInterval(()=>{
-		setTime(time-1);
-		},[1000]);
-
-
-	useEffect(()=>{
-		// if(time===0) clearInterval(interval)	
-		clearInterval(interval);
-		return ()=>{if(interval) clearInterval();}
-	},[time])
-	
-	if(time===0) return null;
-	return(
-		<div className="absolute b ba bg-prpl bn f1 ph4 prpl pv2 left-2 ylw">{'00 : '+time}</div>
-		)
-}
 
 const Canvas=({data,letterType})=>{
 const [image,setImage]=useState('')
 	const [letter,setLetter]=useState(-1)
-	const [resultSet,setResultSet]=useState([])
+	const [submitted, setSubmitted] = useState(false);
 	const canvasValue=useRef(null);
+
+	useEffect(() => {
+		global.resultSet = {};
+		return () => {
+			global.resultSet = {};
+		};
+	}, []);
+
+	const storeData = (key, obj) => {
+		console.log(key, obj);
+		if (key < 0) {
+			return;
+		}
+
+		if (global.resultSet[key]) {
+			global.resultSet[key] = {
+				...global.resultSet[key],
+				...obj,
+			};
+		}
+
+		global.resultSet[key] = obj;
+	};
 	
 	useEffect(()=>{
 		if(letter===-1) return;
@@ -62,7 +67,13 @@ const [image,setImage]=useState('')
 			setImage(canvasValue.current.canvas.drawing.toDataURL("image/png"))
 				canvasValue.current.clear();
 			if((letterType===1 && letter<26)||(letterType===2&&letter<100)) setLetter(letter+1)
-	}
+	};
+	const handleSubmit = () => {
+		setImage(canvasValue.current.canvas.drawing.toDataURL("image/png"))
+		canvasValue.current.clear();
+		setSubmitted(true);
+	};
+
 	return(
 		<>
 <Query
@@ -72,8 +83,28 @@ const [image,setImage]=useState('')
 			
 			fetchPolicy="cache-and-network"
 		>
-			{({ data }) => {
-				console.log(data);
+			{({ data: dataM, loading: loadingM }) => {
+				const { getCharacter } = dataM || {};
+				if (dataM && !loadingM) {
+					storeData(letter-1, { value: getCharacter });
+					if (submitted) {
+						const stats = data.reduce((acc, val, idx) => {
+							if (global.resultSet && global.resultSet[idx] && global.resultSet[idx].value.toLowerCase() == val.name.toLowerCase()) {
+								acc.correct += 1;
+							} else {
+								acc.wrong += 1;
+							}
+							return acc;
+						}, { correct: 0, wrong: 0 });
+
+						return (
+							<div className="flex flex-column">
+								<div className="green">Correct : {stats.correct}</div>
+							</div>
+						);
+					}
+				}
+
 				return null
 				}}
 			</Query>
@@ -85,7 +116,6 @@ const [image,setImage]=useState('')
 				<CanvasDraw style={{height:'16rem',width:"100%"}} brushColor="red" ref={canvasValue}/>
 				
 			</div>
-			{letter===-1?null:<Timer/>}
 			
 		</div>
 		
@@ -97,7 +127,7 @@ const [image,setImage]=useState('')
 		</div>
 		<div className="flex justify-between mt3">
 			
-			{letter===-1?<button type="submit" className="b bn bg-prpl  f4 flex items-center justify-center ph4 pv2  w-20 white pointer" onClick={handleStart}>Start Test</button>:<><button type="submit" className="b bn bg-prpl  f4 flex items-center justify-center ph4 pv2  w-20 white pointer" onClick={handleNext}>Submit Test</button>
+			{letter===-1?<button type="submit" className="b bn bg-prpl  f4 flex items-center justify-center ph4 pv2  w-20 white pointer" onClick={handleStart}>Start Test</button>:<><button type="submit" className="b bn bg-prpl  f4 flex items-center justify-center ph4 pv2  w-20 white pointer" onClick={handleSubmit}>Submit Test</button>
 			
 			<button type="submit" className="b bn bg-prpl  f4 flex items-center justify-center ph4 pv2  w-20 white pointer" onClick={handleSkip}>Skip</button>
 <button type="submit" className="b bn bg-prpl  f4 flex items-center justify-center ph4 pv2  w-20 white pointer" onClick={handleNext}>Next</button>

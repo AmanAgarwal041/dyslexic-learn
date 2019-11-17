@@ -5,6 +5,7 @@ import listdata from '../../queries/listdata.gql';
 import getchar from '../../queries/getchar.gql';
 import  Header from './header';
 import CanvasDraw from "react-canvas-draw";
+import noop from '../../helpers/noop';
 
 const Learn = props => {
 	const canvasValue=useRef(null);
@@ -31,7 +32,8 @@ const Learn = props => {
 		// canvasValue.current
 	}
 	const handleNext=()=>{
-			setImage(canvasValue.current.canvas.drawing.toDataURL("image/jpeg"))
+		handleClear();
+		setImage('');
 		if((letterType===1 && letter<26)||(letterType===2&&letter<100)) setLetter(letter+1);
 	}
 
@@ -59,8 +61,9 @@ const Learn = props => {
 			
 			fetchPolicy="cache-and-network"
 		>
-			{({ data:charData }) => {
-				console.log(charData);
+			{({ data:charData, loading: loadingN }) => {
+				const { getCharacter } = charData || {};
+				console.log(getCharacter, loadingN, name, getCharacter == name);
 				return (
 					<>
 					<div className="flex flex-column items-center w-25">
@@ -69,7 +72,13 @@ const Learn = props => {
 				</div>
 				<div className="flex flex-column items-center justify-center">
 				<button type="submit" className=" b b--black ba bn f4 mb3 ph4 pointer prpl pv2" data-text={name} onClick={onSpeak}>Speak</button>
-				<button type="submit" className=" b b--black ba bn f4 mb3 ph4 pointer prpl pv2" onClick={handleData}>Test</button>
+				<button type="submit" className={`b b--black ba bn f4 mb3 ph4 pointer prpl pv2`} onClick={loading ? noop : handleData}>{loadingN ? 'Loading' : 'Test'}</button>
+				{getCharacter && !loadingN ? (
+						getCharacter == name ? 
+						<span className="f3 green"> &#10003; </span> : 
+						<span className="f3 red"> &#10007;</span>
+					) : null
+				}
 			</div>
 				</>)
 				}}
@@ -79,14 +88,16 @@ const Learn = props => {
 				</Query>
 			
 			
-			
 			<div className="flex flex-column items-center w-25">
-				<span className="flex mb3"><span className="b f4 mr3 prpl">Canvas Draw</span>
-				<span className="f3"> &#10003; &#10007;</span></span>
+				<span className="flex mb3"><span className="b f4 mr3 prpl">Canvas Draw</span></span>
 				<CanvasDraw style={{height:'20rem',width:"100%"}} brushColor="red"  catenaryColor="green" ref={canvasValue}/>
 				<div className="flex mt3">
-					<span className="mr3 bn white fw6 ph3 pv2 pointer bg-pnk" onClick={handleClear}>Clear</span>
-					<span className=" bn ph3 white fw6 pv2 pointer bg-pnk" onClick={handleUndo}>Undo</span>
+					<span className="mr3 bn white fw6 ph3 pv2 pointer bg-pnk" onClick={handleClear}>
+						Clear
+					</span>
+					<span className=" bn ph3 white fw6 pv2 pointer bg-pnk" onClick={handleUndo}>
+						Undo
+					</span>
 				</div>
 			</div>
 		</div>
