@@ -40,8 +40,8 @@ function getCharacter(imageString) {
     // };
     const [result] = await client.textDetection("/home/ubuntu/images/"+time+".png");
 const detections = result.textAnnotations;
-console.log('Text:');
-detections.forEach(text => console.log(text));
+return detections[0].text;
+// detections.forEach(text => console.log(text));
     // request.post(options, (error, response, body) => {
     //   if (error) {
     //     console.log('Error: ', error);

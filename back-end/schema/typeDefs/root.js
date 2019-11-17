@@ -18,10 +18,6 @@ module.exports = gql`
 		name: String!
 	}
 
-	type Char {
-		character: String
-	}
-
 	extend type RootQuery {
 		getListData(
 			offset: Int = 0, 
@@ -35,6 +31,6 @@ module.exports = gql`
 		getAllTypes: [ItemType!],
 		getCharacter(
 			image: String!
-		): Char
+		): String
 	}
 `;
