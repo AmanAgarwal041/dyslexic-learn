@@ -29,7 +29,7 @@ module.exports = () => {
 		},
 		async getCharacter({ image }) {
 			console.log(image)
-			return await ocrS.getCharacter(image)
+			return ocrS.getCharacter(image)
 		},
 		getTypeOfItem: dataS.getTypeOfItem,
 		getAllTypes: dataS.getAllTypes,
