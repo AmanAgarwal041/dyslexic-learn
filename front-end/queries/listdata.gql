@@ -1,0 +1,10 @@
+query listdata($offset:Int,$typeid:ID!,$lang:String){
+  getListData(offset:$offset,typeid:$typeid,lang:$lang){
+    id
+    name
+    images
+    lang
+   
+  }
+}
+

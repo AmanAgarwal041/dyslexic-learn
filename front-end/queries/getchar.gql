@@ -1,0 +1,5 @@
+query getchar($image:String!){
+  getCharacter(image:$image){
+    character
+  }
+}
