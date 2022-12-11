@@ -12,7 +12,7 @@
   "dependencies": {
     "@google-cloud/vision": "^1.7.1",
     "apollo-server-express": "^2.9.9",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "knex": "^0.20.2",
     "pg": "^7.12.1",
     "ramda": "^0.26.1",
