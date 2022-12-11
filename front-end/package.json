@@ -23,7 +23,7 @@
 		"apollo-link-http": "^1.5.16",
 		"apollo-link-state": "^0.4.2",
 		"cookie-parser": "^1.4.4",
-		"express": "^4.17.1",
+		"express": "^4.17.3",
 		"graphql": "^14.5.4",
 		"graphql-tag": "^2.10.1",
 		"hh-mm-ss": "^1.2.0",
